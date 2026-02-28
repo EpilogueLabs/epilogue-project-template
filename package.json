@@ -1,0 +1,17 @@
+{
+  "name": "epilogue-project-template",
+  "version": "0.0.1",
+  "description": "Replace this with your project. See README.md for setup instructions.",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'Replace with your dev command'",
+    "build": "echo 'Replace with your build command'",
+    "test": "echo 'No tests configured yet' && exit 0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.41.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

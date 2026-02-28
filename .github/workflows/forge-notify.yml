@@ -1,0 +1,24 @@
+name: Notify Forge
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  notify-forge:
+    name: Wake Forge for ready issues
+    runs-on: ubuntu-latest
+    if: github.event.label.name == 'ready-for-forge'
+    steps:
+      - name: Fire OpenClaw webhook
+        run: |
+          curl -X POST "${{ secrets.OPENCLAW_WEBHOOK_URL }}" \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer ${{ secrets.OPENCLAW_WEBHOOK_SECRET }}" \
+            -d '{
+              "event": "forge-pickup",
+              "issue_number": ${{ github.event.issue.number }},
+              "issue_title": "${{ github.event.issue.title }}",
+              "issue_url": "${{ github.event.issue.html_url }}",
+              "repo": "${{ github.repository }}"
+            }'

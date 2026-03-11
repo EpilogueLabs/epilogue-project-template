@@ -1,5 +1,7 @@
 # Epilogue Project Template
 
+[![CI](https://github.com/EpilogueLabs/epilogue-project-template/actions/workflows/ci.yml/badge.svg)](https://github.com/EpilogueLabs/epilogue-project-template/actions/workflows/ci.yml)
+
 Template for all Epilogue projects. Pre-wired with:
 
 - **CI/CD** via GitHub Actions (unit tests + type check on every PR)
